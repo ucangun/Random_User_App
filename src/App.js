@@ -1,3 +1,7 @@
+import "bootstrap/dist/css/bootstrap.css";
+import Table from "react-bootstrap/Table";
+import "./index.css";
+
 import { useEffect, useState } from "react";
 import axios from "axios";
 
@@ -17,6 +21,7 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [desc, setDesc] = useState("Name");
   const [info, setInfo] = useState("");
+  const [userList, setUserList] = useState([]);
 
   const getUserData = async () => {
     setLoading(true);
@@ -36,6 +41,15 @@ function App() {
     }
   }, [userData]);
 
+  const handleAddUser = () => {
+    const newUser = {
+      name: `${userData.name.first} ${userData.name.last}`,
+      email: userData.email,
+      age: `${userData.dob.age}`,
+    };
+    setUserList((prevList) => [...prevList, newUser]);
+  };
+
   return (
     <div>
       <header>
@@ -52,7 +66,7 @@ function App() {
             <button
               onClick={() => {
                 setDesc("Name");
-                setInfo(`${userData?.name.first} ${userData?.name.last}`);
+                setInfo(`${userData.name.first} ${userData?.name.last}`);
               }}
             >
               {userData?.gender === "male" ? (
@@ -65,7 +79,7 @@ function App() {
             <button
               onClick={() => {
                 setDesc("Email");
-                setInfo(`${userData?.email}`);
+                setInfo(`${userData.email}`);
               }}
             >
               <img src={mail} alt="" />
@@ -74,7 +88,7 @@ function App() {
             <button
               onClick={() => {
                 setDesc("Age");
-                setInfo(`${userData?.dob.age}`);
+                setInfo(`${userData.dob.age}`);
               }}
             >
               {userData?.gender === "male" ? (
@@ -88,7 +102,7 @@ function App() {
               onClick={() => {
                 setDesc("Adress");
                 setInfo(
-                  `${userData?.location.city} / ${userData?.location.country} `
+                  `${userData.location.city} / ${userData?.location.country} `
                 );
               }}
             >
@@ -107,7 +121,7 @@ function App() {
             <button
               onClick={() => {
                 setDesc("Password");
-                setInfo(`${userData?.login.password}`);
+                setInfo(`${userData.login.password}`);
               }}
             >
               <img src={lock} alt="" />
@@ -117,9 +131,31 @@ function App() {
             <button onClick={() => getUserData()}>
               {loading ? "Loading..." : "New User"}
             </button>
-            <button>Add User</button>
+            <button onClick={handleAddUser}>Add User</button>
           </div>
         </div>
+        {userList.length > 0 && (
+          <Table striped bordered hover>
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Age</th>
+              </tr>
+            </thead>
+            <tbody>
+              {userList.map((user, i) => (
+                <tr key={i}>
+                  <td>{i + 1}</td>
+                  <td>{user.name}</td>
+                  <td>{user.email}</td>
+                  <td>{user.age}</td>
+                </tr>
+              ))}
+            </tbody>
+          </Table>
+        )}
       </main>
     </div>
   );
