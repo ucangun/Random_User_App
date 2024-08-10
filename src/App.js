@@ -16,12 +16,13 @@ function App() {
   const [userData, setUserData] = useState();
   const [desc, setDesc] = useState("Name");
 
+  const getUserData = async () => {
+    const { data } = await axios.get(url);
+    console.log(data.results[0]);
+    setUserData(data.results[0]);
+  };
+
   useEffect(() => {
-    const getUserData = async () => {
-      const { data } = await axios.get(url);
-      console.log(data.results[0]);
-      setUserData(data.results[0]);
-    };
     getUserData();
   }, []);
 
@@ -65,8 +66,8 @@ function App() {
               <img src={lock} alt="" />
             </button>
           </div>
-          <div>
-            <button>New User</button>
+          <div className="user_buttons">
+            <button onClick={() => getUserData()}>New User</button>
             <button>Add User</button>
           </div>
         </div>
