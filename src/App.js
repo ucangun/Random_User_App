@@ -15,16 +15,23 @@ function App() {
 
   const [userData, setUserData] = useState();
   const [desc, setDesc] = useState("Name");
+  const [info, setInfo] = useState("");
 
   const getUserData = async () => {
     const { data } = await axios.get(url);
-    console.log(data.results[0]);
     setUserData(data.results[0]);
   };
 
   useEffect(() => {
     getUserData();
   }, []);
+
+  useEffect(() => {
+    if (userData) {
+      setDesc("Name");
+      setInfo(`${userData.name.first} ${userData.name.last}`);
+    }
+  }, [userData]);
 
   return (
     <div>
@@ -36,33 +43,70 @@ function App() {
           <img src={userData?.picture.large} alt="user" />
           <div className="user">
             <h4 className="user_desc">My {desc} is</h4>
-            <h3 className="user_info">{`${userData?.name.first} ${userData?.name.last}`}</h3>
+            <h3 className="user_info">{info}</h3>
           </div>
           <div className="buttons">
-            <button onClick={() => setDesc("Name")}>
+            <button
+              onClick={() => {
+                setDesc("Name");
+                setInfo(`${userData?.name.first} ${userData?.name.last}`);
+              }}
+            >
               {userData?.gender === "male" ? (
                 <img src={man} alt="man" />
               ) : (
                 <img src={woman} alt="woman" />
               )}
             </button>
-            <button onClick={() => setDesc("Email")}>
+
+            <button
+              onClick={() => {
+                setDesc("Email");
+                setInfo(`${userData?.email}`);
+              }}
+            >
               <img src={mail} alt="" />
             </button>
-            <button onClick={() => setDesc("Age")}>
+
+            <button
+              onClick={() => {
+                setDesc("Age");
+                setInfo(`${userData?.dob.age}`);
+              }}
+            >
               {userData?.gender === "male" ? (
                 <img src={ageMan} alt="age man" />
               ) : (
                 <img src={ageWoman} alt="age woman" />
               )}
             </button>
-            <button onClick={() => setDesc("Adress")}>
+
+            <button
+              onClick={() => {
+                setDesc("Adress");
+                setInfo(
+                  `${userData?.location.city} / ${userData?.location.country} `
+                );
+              }}
+            >
               <img src={map} alt="" />
             </button>
-            <button onClick={() => setDesc("Phone")}>
+
+            <button
+              onClick={() => {
+                setDesc("Phone");
+                setInfo(`${userData?.phone}`);
+              }}
+            >
               <img src={phone} alt="" />
             </button>
-            <button onClick={() => setDesc("Password")}>
+
+            <button
+              onClick={() => {
+                setDesc("Password");
+                setInfo(`${userData?.login.password}`);
+              }}
+            >
               <img src={lock} alt="" />
             </button>
           </div>
