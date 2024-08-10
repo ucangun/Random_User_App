@@ -14,6 +14,7 @@ function App() {
   const url = "https://randomuser.me/api/";
 
   const [userData, setUserData] = useState();
+  const [desc, setDesc] = useState("Name");
 
   useEffect(() => {
     const getUserData = async () => {
@@ -33,34 +34,34 @@ function App() {
         <div className="card">
           <img src={userData?.picture.large} alt="user" />
           <div className="user">
-            <h4 className="user_desc">My Name is</h4>
+            <h4 className="user_desc">My {desc} is</h4>
             <h3 className="user_info">{`${userData?.name.first} ${userData?.name.last}`}</h3>
           </div>
           <div className="buttons">
-            <button>
+            <button onClick={() => setDesc("Name")}>
               {userData?.gender === "male" ? (
                 <img src={man} alt="man" />
               ) : (
                 <img src={woman} alt="woman" />
               )}
             </button>
-            <button>
+            <button onClick={() => setDesc("Email")}>
               <img src={mail} alt="" />
             </button>
-            <button>
+            <button onClick={() => setDesc("Age")}>
               {userData?.gender === "male" ? (
                 <img src={ageMan} alt="age man" />
               ) : (
                 <img src={ageWoman} alt="age woman" />
               )}
             </button>
-            <button>
+            <button onClick={() => setDesc("Adress")}>
               <img src={map} alt="" />
             </button>
-            <button>
+            <button onClick={() => setDesc("Phone")}>
               <img src={phone} alt="" />
             </button>
-            <button>
+            <button onClick={() => setDesc("Password")}>
               <img src={lock} alt="" />
             </button>
           </div>
