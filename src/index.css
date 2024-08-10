@@ -1,4 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
 body {
+  font-family: "Poppins", sans-serif;
   background-color: aqua;
   display: flex;
   justify-content: center;
@@ -7,8 +10,13 @@ body {
 }
 
 h1 {
+  font-size: 1.8rem;
   text-align: center;
 }
+
+/* ---------------------------------- */
+/*                CARD                */
+/* ---------------------------------- */
 
 .card {
   background-color: yellow;
@@ -23,14 +31,27 @@ h1 {
 }
 
 .card img {
-  margin-top: 1rem;
+  margin-top: 1.5rem;
   border-radius: 50%;
   cursor: pointer;
 }
 
 .user {
   text-align: center;
+  letter-spacing: 0.02rem;
 }
+
+.user h5 {
+  font-size: 0.9rem;
+}
+
+.user h3 {
+  font-size: 1.3rem;
+}
+
+/* ---------------------------------- */
+/*               BUTTONS              */
+/* ---------------------------------- */
 
 .buttons {
   width: 80%;
@@ -55,8 +76,12 @@ h1 {
   width: 95%;
 }
 
+/* ---------------------------------- */
+/*            USER BUTTONS            */
+/* ---------------------------------- */
+
 .user_buttons {
-  margin-top: 1rem;
+  margin-top: 1.5rem;
 
   display: flex;
   justify-content: space-between;
@@ -64,8 +89,10 @@ h1 {
 }
 
 .user_buttons button {
+  font-size: 1rem;
   display: inline-block;
-  border: none;
   padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.4rem;
   cursor: pointer;
 }

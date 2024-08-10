@@ -14,12 +14,15 @@ function App() {
   const url = "https://randomuser.me/api/";
 
   const [userData, setUserData] = useState();
+  const [loading, setLoading] = useState(false);
   const [desc, setDesc] = useState("Name");
   const [info, setInfo] = useState("");
 
   const getUserData = async () => {
+    setLoading(true);
     const { data } = await axios.get(url);
     setUserData(data.results[0]);
+    setLoading(false);
   };
 
   useEffect(() => {
@@ -42,7 +45,7 @@ function App() {
         <div className="card">
           <img src={userData?.picture.large} alt="user" />
           <div className="user">
-            <h4 className="user_desc">My {desc} is</h4>
+            <h5 className="user_desc">My {desc} is</h5>
             <h3 className="user_info">{info}</h3>
           </div>
           <div className="buttons">
@@ -111,7 +114,9 @@ function App() {
             </button>
           </div>
           <div className="user_buttons">
-            <button onClick={() => getUserData()}>New User</button>
+            <button onClick={() => getUserData()}>
+              {loading ? "Loading..." : "New User"}
+            </button>
             <button>Add User</button>
           </div>
         </div>
