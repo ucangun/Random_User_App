@@ -6,8 +6,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-
-  height: 80vh;
+  min-height: 100vh;
 }
 
 h1 {
@@ -20,11 +19,24 @@ h1 {
 /*                CARD                */
 /* ---------------------------------- */
 
+.wrapper {
+  width: 50rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .card {
+  margin: auto;
   background-color: yellow;
   border-radius: 1rem;
-  width: 30rem;
-  height: 25rem;
+  width: 100%;
+  max-width: 30rem;
+  min-width: 20rem;
+  padding: 0.5rem 0 1.5rem 0;
+
   margin-bottom: 2rem;
 
   display: flex;
@@ -33,10 +45,13 @@ h1 {
   gap: 1rem;
 }
 
-.card img {
-  margin-top: 1.5rem;
+.user_photo {
+  width: 8rem;
+  height: 8rem;
   border-radius: 50%;
+  margin-top: 1rem;
   cursor: pointer;
+  object-fit: cover;
 }
 
 .user {
@@ -76,7 +91,7 @@ h1 {
 }
 
 .buttons button img {
-  width: 95%;
+  width: 100%;
 }
 
 /* ---------------------------------- */
@@ -98,4 +113,42 @@ h1 {
   border: none;
   border-radius: 0.4rem;
   cursor: pointer;
+}
+
+/* ---------------------------------- */
+/*          RESPONSIVE DESIGN         */
+/* ---------------------------------- */
+
+@media (max-width: 1024px) {
+  .buttons button {
+    width: 2.8rem;
+    height: 2.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.4rem;
+  }
+
+  .card {
+    max-width: 20rem;
+  }
+
+  .buttons button {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .user_buttons {
+    width: 70%;
+  }
+
+  .user h5 {
+    font-size: 0.8rem;
+  }
+
+  .user h3 {
+    font-size: 1.1rem;
+  }
 }

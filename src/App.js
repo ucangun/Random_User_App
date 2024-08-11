@@ -55,9 +55,13 @@ function App() {
       <header>
         <h1>Random User App</h1>
       </header>
-      <main>
+      <main className="wrapper">
         <div className="card">
-          <img src={userData?.picture.large} alt="user" />
+          <img
+            src={userData?.picture.large}
+            alt="user"
+            className="user_photo"
+          />
           <div className="user">
             <h5 className="user_desc">My {desc} is</h5>
             <h3 className="user_info">{info}</h3>
@@ -135,7 +139,7 @@ function App() {
           </div>
         </div>
         {userList.length > 0 && (
-          <Table striped bordered hover>
+          <Table striped bordered hover responsive className="table">
             <thead>
               <tr>
                 <th>#</th>
