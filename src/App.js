@@ -139,7 +139,14 @@ function App() {
           </div>
         </div>
         {userList.length > 0 && (
-          <Table striped bordered hover responsive className="table">
+          <Table
+            striped
+            bordered
+            hover
+            responsive
+            variant="success"
+            className="table"
+          >
             <thead>
               <tr>
                 <th>#</th>
