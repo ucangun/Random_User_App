@@ -1,70 +1,66 @@
-# Getting Started with Create React App
+# Ramdom User App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+https://randomuserappumut.netlify.app/
 
-## Available Scripts
+## Project Purpose
 
-In the project directory, you can run:
+The primary goal of this project is to create a React application that fetches and displays random user information from an external API. The project focuses on enhancing skills in React hooks (`useState`, `useEffect`), API integration with Axios, and managing component-level state and effects. Additionally, it provides experience in utilizing React Bootstrap for styling and structuring the app layout.
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Project Structure
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```
+|--Random_User_App(folder)
+|
+├── public
+│     └── index.html
+├── src  
+│    ├── assets
+│    │       └── [images]
+│    │      
+│    ├── App.js
+│    ├── index.css
+│    └── index.js
+│
+├── .gitignore
+├── package-lock.json
+├── package.json
+└── README.md
+```
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Project Features
+- **Fetch Random User**: Uses Axios to fetch random user data from the `[Random User API](https://randomuser.me/api/)` and displays it on the screen.
+- **Display User Information**: Shows user details including name, email, age, location, phone number, and password.
+- **Add User**: Allows users to save the displayed user information for later viewing.
+- **New User Button**: Fetches and displays a new random user each time the button is clicked.
+- **State Management**: Utilizes `useState` to manage the application’s state, particularly for storing user data.
+- **Effect Hook**: Implements `useEffect` to fetch user data on initial render and when the "New User" button is clicked.
+- **Styling**: Custom styling with CSS for layout and React Bootstrap for responsive design and table components.
 
-### `npm run build`
+## Outcome
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![Random User App](https://github.com/user-attachments/assets/4a35efc3-2836-45a9-af13-4884df5e7fa7)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Technologies Used
+- **ReactJS**: Used for building the user interface. Key React features include:
+  - **useState**: For managing the application's state.
+  - **useEffect**: For fetching data from the API during initial render and when specific conditions change.
+- **Axios**: Used for making HTTP requests to the Random User API to fetch user data.
+- **React Bootstrap**: Utilized for responsive design and table layout.
+- **CSS**: Employed for custom styling to enhance the visual presentation of the app.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### At the end of the project, will be able to;
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+This project has significantly improved my skills in working with React hooks, particularly `useState` and `useEffect`, as well as integrating third-party APIs using `Axios`. By developing the "Random User App", I have gained practical experience in:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- Effectively managing `state and side effects in a React` application.
+- `Fetching and displaying data` from an `external API using Axios`.
+- Structuring a React application with reusable components.
+- Utilizing `React Bootstrap` for responsive and functional UI elements.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+These skills are fundamental for creating dynamic and data-driven web applications in the future.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<p align="center"> 📝 Happy Coding! 🌟 </p>
