@@ -30,7 +30,7 @@ The primary goal of this project is to create a React application that fetches a
 
 
 ## Project Features
-- **Fetch Random User**: Uses Axios to fetch random user data from the `[Random User API](https://randomuser.me/api/)` and displays it on the screen.
+- **Fetch Random User**: Uses Axios to fetch random user data from the `https://randomuser.me/api/` and displays it on the screen.
 - **Display User Information**: Shows user details including name, email, age, location, phone number, and password.
 - **Add User**: Allows users to save the displayed user information for later viewing.
 - **New User Button**: Fetches and displays a new random user each time the button is clicked.
